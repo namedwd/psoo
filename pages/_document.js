@@ -7,6 +7,9 @@ export default function Document() {
         <meta charSet="utf-8" />
         <meta name="theme-color" content="#3b82f6" />
         
+      <meta name="google-site-verification" content="sCGiCDLue1FQPs4UWQOUkA6fxzRqB4mzAMlrDI3cdzY" />
+      <meta name="naver-site-verification" content="3ec4655d6c135102889e65c91510b38dc1845bec" />
+        
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
