@@ -5,7 +5,8 @@ export default function SEO({
   description = "평수를 제곱미터로 변환하고 3D로 공간을 확인하세요. 평당 가격 계산, 가로세로 계산 등 모든 평수 관련 기능을 무료로 제공합니다.",
   canonical = "https://www.lerapick.com",
   ogImage = "https://www.lerapick.com/평수 계산기.webp",
-  keywords = "평수 계산기, 평수 계산, 제곱미터 계산, 평수 변환, 평당 가격, 분양면적, 전용면적, 3D 공간 시각화"
+  keywords = "평수 계산기, 평수 계산, 제곱미터 계산, 평수 변환, 평당 가격, 분양면적, 전용면적, 3D 공간 시각화",
+  children
 }) {
   return (
     <Head>
@@ -29,6 +30,9 @@ export default function SEO({
       
       {/* Viewport */}
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+      
+      {/* 추가 메타 태그 */}
+      {children}
     </Head>
   );
 }

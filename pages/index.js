@@ -459,7 +459,10 @@ export default function Home() {
 
   return (
     <>
-      <SEO />
+      <SEO>
+        <meta name="google-site-verification" content="sCGiCDLue1FQPs4UWQOUkA6fxzRqB4mzAMlrDI3cdzY" />
+        <meta name="naver-site-verification" content="3ec4655d6c135102889e65c91510b38dc1845bec" />
+      </SEO>
       <div className="bg-gradient-to-br from-slate-50 to-slate-100">
         {/* 타이틀 섹션 */}
         <div className="bg-white border-b py-3 md:py-4">
