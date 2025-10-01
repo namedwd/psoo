@@ -11,6 +11,7 @@ export default function SEO({
     <Head>
       <title>{title}</title>
       <meta name="google-site-verification" content="sCGiCDLue1FQPs4UWQOUkA6fxzRqB4mzAMlrDI3cdzY" />
+      <meta name="naver-site-verification" content="3ec4655d6c135102889e65c91510b38dc1845bec" />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <link rel="canonical" href={canonical} />
