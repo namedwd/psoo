@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import SEO from '../components/SEO';
 import { Calculator, Home, ArrowRight } from 'lucide-react';
 

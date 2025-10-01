@@ -1,9 +1,10 @@
 import { useState, Suspense } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Text, PerspectiveCamera } from '@react-three/drei';
 import * as THREE from 'three';
-import { Calculator, Ruler, Maximize2, Home as HomeIcon, DollarSign, ChevronDown, ChevronUp } from 'lucide-react';
+import { Calculator, Ruler, Maximize2, Home as HomeIcon, DollarSign, ChevronDown, ChevronUp, Share2 } from 'lucide-react';
 import SEO from '../components/SEO';
 
 // 단위 변환
@@ -246,6 +247,27 @@ export default function Home() {
   // FAQ 토글
   const [openFaq, setOpenFaq] = useState(null);
 
+  // 공유 함수
+  const handleShare = async () => {
+    const shareData = {
+      title: '평수 계산기 - 레라픽',
+      text: '평수와 제곱미터를 쉽게 변환하고 3D로 공간을 확인하세요!',
+      url: 'https://www.lerapick.com'
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        // 폴백: URL 복사
+        await navigator.clipboard.writeText('https://www.lerapick.com');
+        alert('링크가 클립보드에 복사되었습니다!');
+      }
+    } catch (err) {
+      console.log('공유 실패:', err);
+    }
+  };
+
   // 빠른 계산기 핸들러
   const handleQuickPyeongChange = (e) => {
     const value = e.target.value;
@@ -371,18 +393,13 @@ export default function Home() {
       const pyeong = parseFloat(quickPyeong) || 10;
       const m2 = pyeong * 3.3058;
       
-      // 4:3 비율로 설정 (더 현실적인 방 모양)
-      // width : length = 4 : 3
-      // width * length = m2
-      // width = 4k, length = 3k
-      // 4k * 3k = 12k^2 = m2
-      // k = sqrt(m2 / 12)
-      const k = Math.sqrt(m2 / 12);
-      const width = 4 * k;
-      const length = 3 * k;
+      // 정사각형으로 설정 (가장 정확한 방법)
+      const side = Math.sqrt(m2);
       
-      setVisualWidth(width.toFixed(2));
-      setVisualLength(length.toFixed(2));
+      // 두 값을 정확히 같게 설정하여 오차 방지
+      const sideStr = side.toFixed(3);
+      setVisualWidth(sideStr);
+      setVisualLength(sideStr);
     }
   };
 
@@ -446,11 +463,23 @@ export default function Home() {
       <div className="bg-gradient-to-br from-slate-50 to-slate-100">
         {/* 타이틀 섹션 */}
         <div className="bg-white border-b py-3 md:py-4">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-2xl md:text-3xl font-bold text-slate-800">평수 계산기</h1>
-            <p className="text-slate-600 text-xs md:text-sm mt-1">
-              평수 ↔ 제곱미터 변환, 3D 공간 시각화, 평당 가격 계산
-            </p>
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-between max-w-4xl mx-auto gap-4">
+              <div className="flex-1 text-center">
+                <h1 className="text-2xl md:text-3xl font-bold text-slate-800">평수 계산기</h1>
+                <p className="text-slate-600 text-xs md:text-sm mt-1">
+                  평수 ↔ 제곱미터 변환, 3D 공간 시각화, 평당 가격 계산
+                </p>
+              </div>
+              <button
+                onClick={handleShare}
+                className="flex-shrink-0 flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 font-medium"
+                aria-label="공유하기"
+              >
+                <Share2 className="w-5 h-5" />
+                <span className="hidden md:inline">공유</span>
+              </button>
+            </div>
           </div>
         </div>
 
@@ -1040,6 +1069,27 @@ export default function Home() {
                 </tbody>
               </table>
             </div>
+          </div>
+        </section>
+
+        {/* SEO용 이미지 */}
+        <section className="mb-8">
+          <div className="bg-white rounded-xl shadow-sm p-6">
+            <h3 className="text-lg font-semibold text-slate-800 mb-4 text-center">
+              평수 계산기 서비스 소개
+            </h3>
+            <div className="relative w-full max-w-3xl mx-auto h-[200px] md:h-[300px]">
+              <Image
+                src="/평수 계산기.webp"
+                alt="평수 계산기 서비스 - 평수와 제곱미터를 쉽게 변환하고 3D로 공간 확인"
+                fill
+                className="object-contain"
+                loading="lazy"
+              />
+            </div>
+            <p className="text-sm text-slate-600 mt-4 text-center">
+              레라픽 평수 계산기는 평수 변환, 3D 공간 시각화, 평당 가격 계산 등 부동산 관련 모든 계산을 무료로 제공하는 웹 서비스입니다.
+            </p>
           </div>
         </section>
       </div>
