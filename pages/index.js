@@ -445,10 +445,10 @@ export default function Home() {
       <SEO />
       <div className="bg-gradient-to-br from-slate-50 to-slate-100">
         {/* 타이틀 섹션 */}
-        <div className="bg-white border-b py-4">
+        <div className="bg-white border-b py-3 md:py-4">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-3xl font-bold text-slate-800">평수 계산기</h1>
-            <p className="text-slate-600 text-sm mt-1">
+            <h1 className="text-2xl md:text-3xl font-bold text-slate-800">평수 계산기</h1>
+            <p className="text-slate-600 text-xs md:text-sm mt-1">
               평수 ↔ 제곱미터 변환, 3D 공간 시각화, 평당 가격 계산
             </p>
           </div>
@@ -458,9 +458,9 @@ export default function Home() {
         
         {/* 1. 빠른 계산기 섹션 */}
         <section className="mb-8">
-          <div className="flex items-center gap-3 mb-4">
-            <Calculator className="w-8 h-8 text-blue-600" />
-            <h2 className="text-3xl font-bold text-slate-800">빠른 평수 계산기</h2>
+          <div className="flex items-center gap-2 md:gap-3 mb-4">
+            <Calculator className="w-6 h-6 md:w-8 md:h-8 text-blue-600" />
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-800">빠른 평수 계산기</h2>
           </div>
 
           <div className="bg-white rounded-xl shadow-lg p-4">
@@ -630,9 +630,9 @@ export default function Home() {
 
         {/* 2. 3D 시각화 섹션 */}
         <section className="mb-8">
-          <div className="flex items-center gap-3 mb-4">
-            <Maximize2 className="w-8 h-8 text-blue-600" />
-            <h2 className="text-3xl font-bold text-slate-800">3D 공간 시각화</h2>
+          <div className="flex items-center gap-2 md:gap-3 mb-4">
+            <Maximize2 className="w-6 h-6 md:w-8 md:h-8 text-blue-600" />
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-800">3D 공간 시각화</h2>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -748,9 +748,9 @@ export default function Home() {
 
         {/* 3. 평당 가격 계산기 */}
         <section className="mb-8">
-          <div className="flex items-center gap-3 mb-4">
-            <DollarSign className="w-8 h-8 text-blue-600" />
-            <h2 className="text-3xl font-bold text-slate-800">평당 가격 계산기</h2>
+          <div className="flex items-center gap-2 md:gap-3 mb-4">
+            <DollarSign className="w-6 h-6 md:w-8 md:h-8 text-blue-600" />
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-800">평당 가격 계산기</h2>
           </div>
 
           <div className="bg-white rounded-xl shadow-lg p-4">
@@ -805,9 +805,9 @@ export default function Home() {
 
         {/* 4. 평수 정보 섹션 */}
         <section className="mb-8">
-          <div className="flex items-center gap-3 mb-4">
-            <HomeIcon className="w-8 h-8 text-blue-600" />
-            <h2 className="text-3xl font-bold text-slate-800">일반적인 공간별 평수</h2>
+          <div className="flex items-center gap-2 md:gap-3 mb-4">
+            <HomeIcon className="w-6 h-6 md:w-8 md:h-8 text-blue-600" />
+            <h2 className="text-2xl md:text-3xl font-bold text-slate-800">일반적인 공간별 평수</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -826,7 +826,7 @@ export default function Home() {
 
         {/* 5. FAQ 섹션 */}
         <section className="mb-8">
-          <h2 className="text-3xl font-bold text-slate-800 mb-4">자주 묻는 질문 (FAQ)</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">자주 묻는 질문 (FAQ)</h2>
 
           <div className="space-y-3">
             {faqs.map((faq, index) => (
@@ -854,7 +854,7 @@ export default function Home() {
 
         {/* 6. 평수 계산 공식 설명 */}
         <section className="mb-8">
-          <h2 className="text-3xl font-bold text-slate-800 mb-4">평수 계산 방법</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">평수 계산 방법</h2>
 
           <div className="bg-white rounded-xl shadow-lg p-6">
             <h3 className="text-xl font-semibold text-slate-800 mb-4">기본 공식</h3>
@@ -901,7 +901,7 @@ export default function Home() {
 
         {/* 7. 추가 정보 */}
         <section className="mb-8">
-          <h2 className="text-3xl font-bold text-slate-800 mb-4">알아두면 유용한 정보</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">알아두면 유용한 정보</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             <div className="bg-white rounded-xl shadow-lg p-4">
