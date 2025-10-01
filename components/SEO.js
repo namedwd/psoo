@@ -10,6 +10,7 @@ export default function SEO({
   return (
     <Head>
       <title>{title}</title>
+      <meta name="google-site-verification" content="sCGiCDLue1FQPs4UWQOUkA6fxzRqB4mzAMlrDI3cdzY" />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <link rel="canonical" href={canonical} />
