@@ -255,7 +255,7 @@ export default function Guide() {
                   <h3 className="text-lg font-semibold text-slate-800 mb-2">베란다 확장</h3>
                   <p className="text-slate-700">
                     베란다를 확장하면 전용면적이 증가하여 실제 사용 공간이 넓어집니다. 
-                    분양 광고에서 "확장 시 OO평"이라고 표시하는 것은 베란다 확장 후의 체감 면적입니다.
+                    분양 광고에서 &ldquo;확장 시 OO평&rdquo;이라고 표시하는 것은 베란다 확장 후의 체감 면적입니다.
                   </p>
                 </div>
 
